@@ -1,0 +1,58 @@
+---
+import "@fontsource-variable/alexandria";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+
+  <style is:global>
+    :root {
+      color-scheme: light dark;
+
+      /* Modo oscuro */
+      @media (prefers-color-scheme: dark) {
+        --color-background: black;
+        --color-text: rgb(244, 231, 212);
+      }
+
+      /* Modo claro */
+      @media (prefers-color-scheme: light) {
+        --color-background: white;
+        --color-text: black;
+      }
+    }
+
+    html {
+      font-family: "Alexandria Variable", sans-serif;
+    }
+
+    body {
+      background: var(--color-background);
+      color: var(--color-text);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  </style>
+</html>

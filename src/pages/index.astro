@@ -1,0 +1,190 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <section id="home" class="flex justify-center">
+      <div class="flex flex-col">
+        <h1 class="text-8xl">
+          Designing emotional<br />digital experiences <br />that people love
+        </h1>
+
+        <div class="flex flex-row justify-between mt-20 pt-28">
+          <div
+            class="flex justify-center items-center relative rotating-effect"
+          >
+            <img
+              id="profilepic"
+              class="rounded-full h-20 w-20 m-[18px] object-cover"
+              src="./profilepic.jpg"
+              alt="Profile Pic"
+            />
+
+            <svg class="h-26 w-26 absolute top-0 left-0 overflow-visible">
+              <defs>
+                <path
+                  id="circlePath"
+                  d="M58,0 A58,58 0 1,0 116,58 A58,58 0 1,0 58,116 A58,58 0 1,0 0,58 A58,58 0 1,0 58,0 Z"
+                ></path>
+              </defs>
+              <text font-size="17" fill="#F4E7D4" dominant-baseline="Hanging">
+                <textPath xlink:href="#circlePath">
+                  ✦ BRAULIO ROSARIO ✦ WEB DEVELOPER
+                </textPath>
+              </text>
+            </svg>
+          </div>
+
+          <div class="flex justify-center items-center">
+            <h2 class="text-lg">
+              I'm a web developer with 2 years of experience, based in <br />
+              the Dominican Republic. I like to understand people to <br />solve
+              their problems and create websites that resonate.
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="h-[90vh] mx-auto flex items-center relative">
+      <div class="flex flex-col">
+        <h1 id="element1" class="text-5xl flex scroll-animation-element">
+          ASTRO ✦ HTML ✦ CSS ✦ TAILWIND ✦ JAVASCRIPT
+        </h1>
+        <h1 id="element2" class="text-5xl flex scroll-animation-element">
+          ✦ REACT ✦ NODE.JS ✦ NEXT ✦ TYPESCRIPT
+        </h1>
+      </div>
+    </section>
+    <section id="work" class="h-screen flex justify-center max-w-7xl mx-auto">
+      <div class="flex-col flex gap-8">
+        <div class="flex justify-start pb-20">
+          <h1 class="text-7xl">Featured work</h1>
+        </div>
+        <div
+          class="flex flex-row justify-between bg-white rounded-lg animate-fade-left animate-duration-1000"
+        >
+          <div class="flex justify-center items-center w-1/2">
+            <img
+              src="./aaaa.webp"
+              alt="Lights and Media"
+              class="object-cover h-80 w-80"
+            />
+          </div>
+          <div
+            class="flex justify-end items-center bg-gradient-to-r from-white via-neutral-900 to-black"
+          >
+            <div class="mx-auto flex flex-col gap-12 ml-20">
+              <h1 class="font-extrabold text-gold italic text-xl">
+                Lights and Media: Social Media Agency
+              </h1>
+              <h2 class="font-extrabold text-gold italic text-xl">
+                Built with Next, Node.js, Typescript, CSS, HTML, Tailwind,
+                Instagram API.
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-row justify-between bg-white rounded-lg animate-fade-left animate-duration-1000"
+        >
+          <div class="flex justify-center w-1/2">
+            <img
+              src="./boxinglogo.webp"
+              alt="Boxing Event"
+              class="object-scale-down h-80 w-80"
+            />
+          </div>
+          <div
+            class="flex justify-end items-center bg-gradient-to-r from-white via-neutral-900 to-black"
+          >
+            <div class="mx-auto flex flex-col gap-12 ml-20">
+              <h1 class="font-extrabold text-gold italic text-xl">
+                Boxing Event III
+              </h1>
+              <h2 class="font-extrabold text-gold italic text-xl">
+                Built with: Astro, JavaScript, Tailwind CSS, HTML, CSS
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .rotating-effect {
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .scroll-animation-element {
+    position: relative;
+    left: -1000px;
+    transition: left 1s ease; /* Ajusta la duración y la función de temporización de la transición */
+  }
+
+  .text-gold {
+    color: rgb(244, 231, 200);
+  }
+</style>
+
+<script>
+  // Capturamos los elementos a animar
+  const element1 = document.getElementById("element1");
+  const element2 = document.getElementById("element2");
+
+  // Función para manejar el evento de scroll
+  function handleScroll() {
+    // Calculamos la distancia entre la parte superior de cada elemento y la parte superior de la ventana
+    const element1Top = element1.getBoundingClientRect().top;
+
+    // Si los elementos están visibles en la pantalla
+    if (element1Top < window.innerHeight) {
+      // Calculamos la distancia que el usuario ha hecho scroll
+      const scrollDistance = window.scrollY;
+
+      element1.style.left = `${scrollDistance}px`;
+
+      element2.style.left = `${scrollDistance}px`;
+
+      // Verificamos si la sección 3 ha comenzado
+      const section3 = document.getElementById("work");
+      const section3Top = section3.getBoundingClientRect().top;
+      if (section3Top < window.innerHeight) {
+        // Si la parte superior de la sección 3 es visible en la ventana, eliminamos el event listener
+        window.removeEventListener("scroll", handleScroll);
+      }
+    }
+  }
+
+  // Escuchamos el evento de scroll
+  window.addEventListener("scroll", handleScroll);
+
+  // Escuchamos el evento de scroll para volver a activar la función handleScroll cuando el usuario vuelve a la sección 2
+  window.addEventListener("scroll", function () {
+    const section2 = document.getElementById("skills");
+    const section2Top = section2.getBoundingClientRect().top;
+    const section3 = document.getElementById("work");
+    const section3Top = section3.getBoundingClientRect().top;
+
+    // Verificamos si la parte superior de la sección 2 es visible en la ventana y si la sección 3 ya no está visible
+    if (section2Top < window.innerHeight && section3Top > window.innerHeight) {
+      // Si se cumple la condición, volvemos a añadir el event listener
+      window.addEventListener("scroll", handleScroll);
+    }
+  });
+</script>
