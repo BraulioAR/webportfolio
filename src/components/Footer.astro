@@ -1,7 +1,7 @@
-<footer class="bg-gradient-to-b from-black via-stone-900 to-neutral-600">
-  <div class="flex justify-center pt-6 w-screen mx-auto max-w-7xl">
+<footer class="footer">
+  <div class="flex justify-center pt-6 mx-auto max-w-7xl w-11/12">
     <div class="flex flex-col">
-      <div class="flex flex-row gap-80 justify-between">
+      <div class="flex lg:flex-row flex-col lg:gap-80 gap-20 justify-between">
         <div class="flex items-center">
           <h1 class="text-7xl">Let's <br />work <br />together</h1>
         </div>
@@ -14,19 +14,50 @@
         </div>
       </div>
       <div class="flex justify-center pt-12 pb-20">
-        <h1>bdressx@gmail.com</h1>
+        <a href="mailto:bdressx@gmail.com">
+          <h1 class="hover:scale-105 transition">bdressx@gmail.com</h1>
+        </a>
       </div>
 
       <hr class="w-full border-t border-gray-400" />
       <div class="flex flex-row justify-between py-5">
-        <div>
+        <div class="mr-3">
           <h1>&copy; 2024 | Braulio A. Rosario.</h1>
         </div>
         <nav class="flex flex-row gap-11">
-          <a href="https://www.linkedin.com/in/barosario/">LinkedIn</a>
-          <a href="https://github.com/BraulioAR">Github</a>
+          <a
+            href="https://www.linkedin.com/in/barosario/"
+            class="hover:scale-105">LinkedIn</a
+          >
+          <a href="https://github.com/BraulioAR" class="hover:scale-105"
+            >Github</a
+          >
         </nav>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  body.light-mode .footer {
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    --tw-gradient-from: #fff var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #fff var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-to: #78716c var(--tw-gradient-to-position);
+  }
+
+  body.dark-mode .footer {
+    background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+    --tw-gradient-from: #000 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: rgb(28 25 23 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from),
+      #1c1917 var(--tw-gradient-via-position), var(--tw-gradient-to);
+    --tw-gradient-to: #525252 var(--tw-gradient-to-position);
+  }
+</style>

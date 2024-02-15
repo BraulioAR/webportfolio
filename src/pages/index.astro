@@ -2,17 +2,17 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout>
   <main>
-    <section id="home" class="flex justify-center">
+    <section id="home" class="flex justify-center mx-auto max-w-7xl w-11/12">
       <div class="flex flex-col">
-        <h1 class="text-8xl">
+        <h1 class="lg:text-8xl text-5xl">
           Designing emotional<br />digital experiences <br />that people love
         </h1>
 
         <div class="flex flex-row justify-between mt-20 pt-28">
           <div
-            class="flex justify-center items-center relative rotating-effect"
+            class="justify-center items-center relative rotating-effect hidden lg:flex"
           >
             <img
               id="profilepic"
@@ -36,8 +36,8 @@ import Layout from "../layouts/Layout.astro";
             </svg>
           </div>
 
-          <div class="flex justify-center items-center">
-            <h2 class="text-lg">
+          <div class="flex justify-center items-center mx-auto">
+            <h2 class="text-lg lg:text-start text-center">
               I'm a web developer with 2 years of experience, based in <br />
               the Dominican Republic. I like to understand people to <br />solve
               their problems and create websites that resonate.
@@ -47,64 +47,121 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
     <section id="skills" class="h-[90vh] mx-auto flex items-center relative">
-      <div class="flex flex-col">
-        <h1 id="element1" class="text-5xl flex scroll-animation-element">
+      <div class="flex flex-col justify-center">
+        <h1
+          id="element1"
+          class="text-5xl text-center lg:text-start flex lg:relative lg:left-[-1000px] lg:transition-left lg:duration-1000 lg:ease-in-out"
+        >
           ASTRO ✦ HTML ✦ CSS ✦ TAILWIND ✦ JAVASCRIPT
         </h1>
-        <h1 id="element2" class="text-5xl flex scroll-animation-element">
+        <h1
+          id="element2"
+          class="text-5xl text-center lg:text-start flex lg:relative lg:left-[-1000px] lg:transition-left lg:duration-1000 lg:ease-in-out"
+        >
           ✦ REACT ✦ NODE.JS ✦ NEXT ✦ TYPESCRIPT
         </h1>
       </div>
     </section>
-    <section id="work" class="h-screen flex justify-center max-w-7xl mx-auto">
-      <div class="flex-col flex gap-8">
-        <div class="flex justify-start pb-20">
+    <section id="work" class="h-screen max-w-7xl mx-auto w-11/12">
+      <div class="flex-col flex gap-8 w-full justify-center items-center">
+        <div class="flex justify-start text-start pb-20">
           <h1 class="text-7xl">Featured work</h1>
         </div>
         <div
-          class="flex flex-row justify-between bg-white rounded-lg animate-fade-left animate-duration-1000"
+          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
         >
-          <div class="flex justify-center items-center w-1/2">
+          <div
+            id="imageContainer"
+            class="flex justify-center h-[25vh] items-center overflow-hidden"
+          >
             <img
+              id="image"
               src="./aaaa.webp"
               alt="Lights and Media"
-              class="object-cover h-80 w-80"
+              class="object-cover hover:scale-105"
             />
           </div>
-          <div
-            class="flex justify-end items-center bg-gradient-to-r from-white via-neutral-900 to-black"
-          >
-            <div class="mx-auto flex flex-col gap-12 ml-20">
-              <h1 class="font-extrabold text-gold italic text-xl">
+          <div id="detailsContainer" class="hidden h-[25vh] w-full">
+            <div
+              class="mx-auto flex flex-col gap-12 justify-center items-center"
+            >
+              <h1
+                class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
+              >
                 Lights and Media: Social Media Agency
               </h1>
-              <h2 class="font-extrabold text-gold italic text-xl">
-                Built with Next, Node.js, Typescript, CSS, HTML, Tailwind,
-                Instagram API.
-              </h2>
+              <h1
+                class="font-bold text-black italic text-xs lg:text-lg text-center detailscontainer"
+              >
+                Built with Next, Node.js, Typescript, CSS, <br /> HTML, Tailwind
+                CSS, Instagram API.
+              </h1>
+              <div class="flex flex-row justify-between gap-20">
+                <button
+                  id="backButton"
+                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer"
+                >
+                  Back
+                </button>
+                <button class="hover:scale-105">
+                  <a
+                    href="https://www.lightsandmedia.agency/"
+                    target="_blank"
+                    class="text-sm font-bold text-black italic detailscontainer"
+                    >Go</a
+                  >
+                </button>
+              </div>
             </div>
           </div>
         </div>
         <div
-          class="flex flex-row justify-between bg-white rounded-lg animate-fade-left animate-duration-1000"
+          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
         >
-          <div class="flex justify-center w-1/2">
+          <div
+            id="imageContainer2"
+            class="flex justify-center items-center h-[25vh] overflow-hidden"
+          >
             <img
+              id="image"
               src="./boxinglogo.webp"
-              alt="Boxing Event"
-              class="object-scale-down h-80 w-80"
+              alt="Boxing Event III"
+              class="object-scale-down hover:scale-105"
             />
           </div>
           <div
-            class="flex justify-end items-center bg-gradient-to-r from-white via-neutral-900 to-black"
+            id="detailsContainer2"
+            class="hidden h-[25vh] justify-center items-center"
           >
-            <div class="mx-auto flex flex-col gap-12 ml-20">
-              <h1 class="font-extrabold text-gold italic text-xl">
+            <div
+              class="mx-auto flex flex-col gap-12 justify-center items-center"
+            >
+              <h1
+                class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
+              >
                 Boxing Event III
               </h1>
-              <h2 class="font-extrabold text-gold italic text-xl">
+              <h1
+                class="font-bold text-black italic text-xs lg:text-xl detailscontainer"
+              >
                 Built with: Astro, JavaScript, Tailwind CSS, HTML, CSS
-              </h2>
+              </h1>
+              <div class="flex flex-row justify-between gap-20">
+                <button
+                  id="backButton2"
+                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer"
+                >
+                  Back
+                </button>
+                <button class="hover:scale-105">
+                  <a
+                    href="https://boxingevent.netlify.app/"
+                    target="_blank"
+                    class="text-sm text-black font-bold italic detailscontainer"
+                    >Go</a
+                  >
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -131,60 +188,95 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 
-  .scroll-animation-element {
-    position: relative;
-    left: -1000px;
-    transition: left 1s ease; /* Ajusta la duración y la función de temporización de la transición */
-  }
-
   .text-gold {
     color: rgb(244, 231, 200);
+  }
+
+  body.light-mode .workcontainer {
+    --tw-bg-opacity: 0.3;
+    background-color: rgb(82 82 82 / var(--tw-bg-opacity));
+  }
+
+  body.light-mode .workcontainer .detailscontainer {
+    color: white;
+  }
+
+  body.dark-mode .workcontainer {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 </style>
 
 <script>
-  // Capturamos los elementos a animar
   const element1 = document.getElementById("element1");
   const element2 = document.getElementById("element2");
 
   // Función para manejar el evento de scroll
   function handleScroll() {
-    // Calculamos la distancia entre la parte superior de cada elemento y la parte superior de la ventana
+    // Calcula la distancia entre la parte superior de cada elemento y la parte superior de la ventana
     const element1Top = element1.getBoundingClientRect().top;
 
     // Si los elementos están visibles en la pantalla
     if (element1Top < window.innerHeight) {
-      // Calculamos la distancia que el usuario ha hecho scroll
+      // Calcula la distancia que el usuario ha hecho scroll
       const scrollDistance = window.scrollY;
 
       element1.style.left = `${scrollDistance}px`;
 
       element2.style.left = `${scrollDistance}px`;
 
-      // Verificamos si la sección 3 ha comenzado
+      // Verifica si la siguiente sección ha comenzado
       const section3 = document.getElementById("work");
       const section3Top = section3.getBoundingClientRect().top;
       if (section3Top < window.innerHeight) {
-        // Si la parte superior de la sección 3 es visible en la ventana, eliminamos el event listener
+        // Si la parte superior de la siguiente sección es visible en la ventana, elimina el event listener
         window.removeEventListener("scroll", handleScroll);
       }
     }
   }
 
-  // Escuchamos el evento de scroll
+  // Escucha el evento de scroll
   window.addEventListener("scroll", handleScroll);
 
-  // Escuchamos el evento de scroll para volver a activar la función handleScroll cuando el usuario vuelve a la sección 2
+  // Escucham el evento de scroll para volver a activar la función handleScroll cuando el usuario vuelve a la sección skills
   window.addEventListener("scroll", function () {
     const section2 = document.getElementById("skills");
     const section2Top = section2.getBoundingClientRect().top;
     const section3 = document.getElementById("work");
     const section3Top = section3.getBoundingClientRect().top;
 
-    // Verificamos si la parte superior de la sección 2 es visible en la ventana y si la sección 3 ya no está visible
+    // Verifica si la parte superior de la sección skills es visible en la ventana y si la siguiente sección  ya no está visible
     if (section2Top < window.innerHeight && section3Top > window.innerHeight) {
-      // Si se cumple la condición, volvemos a añadir el event listener
+      // Si se cumple la condición, vuelve a añadir el event listener
       window.addEventListener("scroll", handleScroll);
     }
+
+    const imageContainer = document.getElementById("imageContainer");
+    const detailsContainer = document.getElementById("detailsContainer");
+    const backButton = document.getElementById("backButton");
+
+    const imageContainer2 = document.getElementById("imageContainer2");
+    const detailsContainer2 = document.getElementById("detailsContainer2");
+    const backButton2 = document.getElementById("backButton2");
+
+    imageContainer.addEventListener("click", () => {
+      imageContainer.style.display = "none";
+      detailsContainer.style.display = "flex";
+    });
+
+    backButton.addEventListener("click", () => {
+      imageContainer.style.display = "flex";
+      detailsContainer.style.display = "none";
+    });
+
+    imageContainer2.addEventListener("click", () => {
+      imageContainer2.style.display = "none";
+      detailsContainer2.style.display = "flex";
+    });
+
+    backButton2.addEventListener("click", () => {
+      imageContainer2.style.display = "flex";
+      detailsContainer2.style.display = "none";
+    });
   });
 </script>

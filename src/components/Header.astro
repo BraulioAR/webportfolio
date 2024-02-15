@@ -1,7 +1,25 @@
-<header class="flex justify-between pt-6 w-screen pb-24 mx-auto max-w-7xl">
+<header class="flex justify-between pt-6 pb-24 mx-auto max-w-7xl w-11/12">
   <h1 class="">Braulio Rosario</h1>
-  <nav class="flex flex-row gap-11">
-    <a href="#work">Work</a>
-    <a href="/">About</a>
+  <nav class="flex flex-row gap-3 lg:gap-11">
+    <a href="#work" class="hover:scale-105">Work</a>
+    <a href="/CV-EN.pdf" target="_blank" class="hover:scale-105">CV</a>
+    <button
+      id="toggleColorScheme"
+      class="bg-gray-500 text-white text-sm rounded-md hover:scale-105 px-1"
+      >Dark/Light</button
+    >
   </nav>
 </header>
+
+<script>
+  const button = document.getElementById("toggleColorScheme");
+  button.addEventListener("click", () => {
+    if (document.body.classList.contains("light-mode")) {
+      document.body.classList.remove("light-mode");
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+      document.body.classList.add("light-mode");
+    }
+  });
+</script>

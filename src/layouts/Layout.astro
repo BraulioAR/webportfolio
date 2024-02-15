@@ -2,45 +2,57 @@
 import "@fontsource-variable/alexandria";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Braulio Rosario Web Portfolio" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <title>Braulio Rosario</title>
   </head>
-  <body>
+  <body class="dark-mode">
     <Header />
     <slot />
     <Footer />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleColorSchemeButton =
+          document.getElementById("toggleColorScheme");
+        if (toggleColorSchemeButton) {
+          toggleColorSchemeButton.addEventListener("click", () => {
+            const body = document.querySelector("body");
+            if (body) {
+              body.classList.toggle("dark");
+              console.log("Color change");
+              if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+                console.log("Color change");
+              } else {
+                body.classList.add("dark");
+                console.log("Color change");
+              }
+            }
+          });
+        }
+      });
+    </script>
   </body>
 
   <style is:global>
-    :root {
-      color-scheme: light dark;
-
-      /* Modo oscuro */
-      @media (prefers-color-scheme: dark) {
-        --color-background: black;
-        --color-text: rgb(244, 231, 212);
+    body.light-mode {
+      --color-background: white;
+      --color-text: black;
+      text {
+        fill: #000000;
       }
+    }
 
-      /* Modo claro */
-      @media (prefers-color-scheme: light) {
-        --color-background: white;
-        --color-text: black;
-      }
+    body.dark-mode {
+      --color-background: black;
+      --color-text: rgb(244, 231, 212);
     }
 
     html {
