@@ -6,11 +6,13 @@ import Layout from "../layouts/Layout.astro";
   <main>
     <section id="home" class="flex justify-center mx-auto max-w-7xl w-11/12">
       <div class="flex flex-col">
-        <h1 class="lg:text-8xl text-5xl">
+        <h1 class="lg:text-8xl text-5xl animate-fade animate-duration-[2000ms]">
           Designing emotional<br />digital experiences <br />that people love
         </h1>
 
-        <div class="flex flex-row justify-between mt-20 pt-28">
+        <div
+          class="flex flex-row justify-between mt-20 pt-28 animate-fade-up animate-duration-[2500ms]"
+        >
           <div
             class="justify-center items-center relative rotating-effect hidden lg:flex"
           >
@@ -46,6 +48,7 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
     </section>
+
     <section id="skills" class="h-[90vh] mx-auto flex items-center relative">
       <div class="flex flex-col justify-center">
         <h1
@@ -78,18 +81,21 @@ import Layout from "../layouts/Layout.astro";
               id="image"
               src="./aaaa.webp"
               alt="Lights and Media"
-              class="object-cover hover:scale-105"
+              class="object-cover h-full hover:scale-105"
             />
           </div>
+
           <div id="detailsContainer" class="hidden h-[25vh] w-full">
             <div
-              class="mx-auto flex flex-col gap-12 justify-center items-center"
+              class="mx-auto flex flex-col gap-5 justify-center items-center"
             >
-              <h1
-                class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
-              >
-                Lights and Media: Social Media Agency
-              </h1>
+              <u class="decoration-[#f8d8a7]">
+                <h1
+                  class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
+                >
+                  Lights and Media: Social Media Agency
+                </h1>
+              </u>
               <h1
                 class="font-bold text-black italic text-xs lg:text-lg text-center detailscontainer"
               >
@@ -99,11 +105,13 @@ import Layout from "../layouts/Layout.astro";
               <div class="flex flex-row justify-between gap-20">
                 <button
                   id="backButton"
-                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer"
+                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer bg-[#F4F6F6] px-4 shadow-xl shadow-gray-500 rounded-md"
                 >
                   Back
                 </button>
-                <button class="hover:scale-105">
+                <button
+                  class="hover:scale-105 bg-[#F4F6F6] text-[1.125rem] px-4 shadow-xl shadow-gray-500 rounded-md animate-wiggle animate-infinite animate-duration-1000 animate-ease-in hover:animate-none"
+                >
                   <a
                     href="https://www.lightsandmedia.agency/"
                     target="_blank"
@@ -119,6 +127,61 @@ import Layout from "../layouts/Layout.astro";
           class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
         >
           <div
+            id="imageContainer3"
+            class="flex justify-center items-center h-[25vh] overflow-hidden"
+          >
+            <img
+              id="image"
+              src="./UnivWindowslogo.png"
+              alt="Universal Windows and Doors"
+              class="object-scale-down h-full hover:scale-105"
+            />
+          </div>
+          <div
+            id="detailsContainer3"
+            class="hidden h-[25vh] justify-center items-center"
+          >
+            <div
+              class="mx-auto flex flex-col gap-5 justify-center items-center"
+            >
+              <h1
+                class="font-bold text-black italic text-sm lg:text-xl text-center detailscontainer"
+              >
+                <u class="decoration-[#f8d8a7]">
+                  Universal Windows and Doors Multiservices
+                </u>
+                <h1
+                  class="font-bold text-black italic text-xs lg:text-xl text-center detailscontainer"
+                >
+                  Built with: Astro, JavaScript, Node.js, Tailwind CSS, HTML,
+                  CSS.
+                </h1>
+                <div class="flex flex-row justify-between gap-20">
+                  <button
+                    id="backButton3"
+                    class="text-sm text-black font-bold italic hover:scale-105 detailscontainer bg-[#F4F6F6] px-4 shadow-xl shadow-gray-500 rounded-md"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="hover:scale-105 bg-[#F4F6F6] text-[1.125rem] px-4 shadow-xl shadow-gray-500 rounded-md animate-wiggle animate-infinite animate-duration-1000 animate-ease-in hover:animate-none"
+                  >
+                    <a
+                      href="https://uwdmultiservices.com/"
+                      target="_blank"
+                      class="text-sm text-black font-bold italic detailscontainer"
+                      >Go</a
+                    >
+                  </button>
+                </div>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
+        >
+          <div
             id="imageContainer2"
             class="flex justify-center items-center h-[25vh] overflow-hidden"
           >
@@ -126,7 +189,7 @@ import Layout from "../layouts/Layout.astro";
               id="image"
               src="./boxinglogo.webp"
               alt="Boxing Event III"
-              class="object-scale-down hover:scale-105"
+              class="object-scale-down h-full hover:scale-105"
             />
           </div>
           <div
@@ -134,26 +197,30 @@ import Layout from "../layouts/Layout.astro";
             class="hidden h-[25vh] justify-center items-center"
           >
             <div
-              class="mx-auto flex flex-col gap-12 justify-center items-center"
+              class="mx-auto flex flex-col gap-5 justify-center items-center"
             >
+              <u class="decoration-[#f8d8a7]">
+                <h1
+                  class="font-bold text-black italic text-sm lg:text-xl text-center detailscontainer"
+                >
+                  Boxing Event III
+                </h1>
+              </u>
               <h1
-                class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
-              >
-                Boxing Event III
-              </h1>
-              <h1
-                class="font-bold text-black italic text-xs lg:text-xl detailscontainer"
+                class="font-bold text-black italic text-xs lg:text-xl text-center detailscontainer"
               >
                 Built with: Astro, JavaScript, Tailwind CSS, HTML, CSS
               </h1>
               <div class="flex flex-row justify-between gap-20">
                 <button
                   id="backButton2"
-                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer"
+                  class="text-sm text-black font-bold italic hover:scale-105 detailscontainer bg-[#F4F6F6] px-4 shadow-xl shadow-gray-500 rounded-md"
                 >
                   Back
                 </button>
-                <button class="hover:scale-105">
+                <button
+                  class="hover:scale-105 bg-[#F4F6F6] text-[1.125rem] px-4 shadow-xl shadow-gray-500 rounded-md animate-wiggle animate-infinite animate-duration-1000 animate-ease-in hover:animate-none"
+                >
                   <a
                     href="https://boxingevent.netlify.app/"
                     target="_blank"
@@ -168,115 +235,150 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </section>
   </main>
-</Layout>
 
-<style>
-  .rotating-effect {
-    animation-name: rotate;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transform-origin: center;
-  }
-
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
+  <style>
+    .rotating-effect {
+      animation-name: rotate;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: center;
     }
-    to {
-      transform: rotate(360deg);
-    }
-  }
 
-  .text-gold {
-    color: rgb(244, 231, 200);
-  }
-
-  body.light-mode .workcontainer {
-    --tw-bg-opacity: 0.3;
-    background-color: rgb(82 82 82 / var(--tw-bg-opacity));
-  }
-
-  body.light-mode .workcontainer .detailscontainer {
-    color: white;
-  }
-
-  body.dark-mode .workcontainer {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-</style>
-
-<script>
-  const element1 = document.getElementById("element1");
-  const element2 = document.getElementById("element2");
-
-  // Función para manejar el evento de scroll
-  function handleScroll() {
-    // Calcula la distancia entre la parte superior de cada elemento y la parte superior de la ventana
-    const element1Top = element1.getBoundingClientRect().top;
-
-    // Si los elementos están visibles en la pantalla
-    if (element1Top < window.innerHeight) {
-      // Calcula la distancia que el usuario ha hecho scroll
-      const scrollDistance = window.scrollY;
-
-      element1.style.left = `${scrollDistance}px`;
-
-      element2.style.left = `${scrollDistance}px`;
-
-      // Verifica si la siguiente sección ha comenzado
-      const section3 = document.getElementById("work");
-      const section3Top = section3.getBoundingClientRect().top;
-      if (section3Top < window.innerHeight) {
-        // Si la parte superior de la siguiente sección es visible en la ventana, elimina el event listener
-        window.removeEventListener("scroll", handleScroll);
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
       }
     }
-  }
 
-  // Escucha el evento de scroll
-  window.addEventListener("scroll", handleScroll);
-
-  // Escucham el evento de scroll para volver a activar la función handleScroll cuando el usuario vuelve a la sección skills
-  window.addEventListener("scroll", function () {
-    const section2 = document.getElementById("skills");
-    const section2Top = section2.getBoundingClientRect().top;
-    const section3 = document.getElementById("work");
-    const section3Top = section3.getBoundingClientRect().top;
-
-    // Verifica si la parte superior de la sección skills es visible en la ventana y si la siguiente sección  ya no está visible
-    if (section2Top < window.innerHeight && section3Top > window.innerHeight) {
-      // Si se cumple la condición, vuelve a añadir el event listener
-      window.addEventListener("scroll", handleScroll);
+    .text-gold {
+      color: rgb(244, 231, 200);
     }
 
-    const imageContainer = document.getElementById("imageContainer");
-    const detailsContainer = document.getElementById("detailsContainer");
-    const backButton = document.getElementById("backButton");
+    body.light-mode .workcontainer {
+      --tw-bg-opacity: 0.1;
+      background-color: rgb(244 231 212 / var(--tw-bg-opacity));
 
-    const imageContainer2 = document.getElementById("imageContainer2");
-    const detailsContainer2 = document.getElementById("detailsContainer2");
-    const backButton2 = document.getElementById("backButton2");
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      --tw-shadow-color: #6b7280;
+      --tw-shadow: var(--tw-shadow-colored);
+    }
 
-    imageContainer.addEventListener("click", () => {
-      imageContainer.style.display = "none";
-      detailsContainer.style.display = "flex";
+    body.light-mode .workcontainer .detailscontainer {
+      color: black;
+    }
+
+    body.dark-mode .workcontainer {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      --tw-shadow-color: #6b7280;
+      --tw-shadow: var(--tw-shadow-colored);
+    }
+  </style>
+
+  <script>
+    const element1 = document.getElementById("element1");
+    const element2 = document.getElementById("element2");
+
+    // Función para manejar el evento de scroll
+    function handleScroll() {
+      // Calcula la distancia entre la parte superior de cada elemento y la parte superior de la ventana
+      const element1Top = element1.getBoundingClientRect().top;
+
+      // Si los elementos están visibles en la pantalla
+      if (element1Top < window.innerHeight) {
+        // Calcula la distancia que el usuario ha hecho scroll
+        const scrollDistance = window.scrollY;
+
+        element1.style.left = `${scrollDistance}px`;
+
+        element2.style.left = `${scrollDistance}px`;
+
+        // Verifica si la siguiente sección ha comenzado
+        const section3 = document.getElementById("work");
+        const section3Top = section3.getBoundingClientRect().top;
+
+        if (section3Top < window.innerHeight) {
+          // Si la parte superior de la siguiente sección es visible en la ventana, elimina el event listener
+          window.removeEventListener("scroll", handleScroll);
+        }
+      }
+    }
+
+    // Escucha el evento de scroll
+    window.addEventListener("scroll", handleScroll);
+
+    // Escucham el evento de scroll para volver a activar la función handleScroll cuando el usuario vuelve a la sección skills
+    window.addEventListener("scroll", function () {
+      const section2 = document.getElementById("skills");
+      const section2Top = section2.getBoundingClientRect().top;
+      const section3 = document.getElementById("work");
+      const section3Top = section3.getBoundingClientRect().top;
+
+      // Verifica si la parte superior de la sección skills es visible en la ventana y si la siguiente sección  ya no está visible
+      if (
+        section2Top < window.innerHeight &&
+        section3Top > window.innerHeight
+      ) {
+        // Si se cumple la condición, vuelve a añadir el event listener
+        window.addEventListener("scroll", handleScroll);
+      }
+
+      const imageContainer = document.getElementById("imageContainer");
+      const detailsContainer = document.getElementById("detailsContainer");
+      const backButton = document.getElementById("backButton");
+
+      const imageContainer2 = document.getElementById("imageContainer2");
+      const detailsContainer2 = document.getElementById("detailsContainer2");
+      const backButton2 = document.getElementById("backButton2");
+
+      const imageContainer3 = document.getElementById("imageContainer3");
+      const detailsContainer3 = document.getElementById("detailsContainer3");
+      const backButton3 = document.getElementById("backButton3");
+
+      imageContainer.addEventListener("click", () => {
+        imageContainer.style.display = "none";
+        detailsContainer.style.display = "flex";
+      });
+
+      backButton.addEventListener("click", () => {
+        imageContainer.style.display = "flex";
+        detailsContainer.style.display = "none";
+      });
+
+      imageContainer2.addEventListener("click", () => {
+        imageContainer2.style.display = "none";
+        detailsContainer2.style.display = "flex";
+      });
+
+      backButton2.addEventListener("click", () => {
+        imageContainer2.style.display = "flex";
+        detailsContainer2.style.display = "none";
+      });
+
+      imageContainer3.addEventListener("click", () => {
+        imageContainer3.style.display = "none";
+        detailsContainer3.style.display = "flex";
+      });
+
+      backButton3.addEventListener("click", () => {
+        imageContainer3.style.display = "flex";
+        detailsContainer3.style.display = "none";
+      });
     });
-
-    backButton.addEventListener("click", () => {
-      imageContainer.style.display = "flex";
-      detailsContainer.style.display = "none";
-    });
-
-    imageContainer2.addEventListener("click", () => {
-      imageContainer2.style.display = "none";
-      detailsContainer2.style.display = "flex";
-    });
-
-    backButton2.addEventListener("click", () => {
-      imageContainer2.style.display = "flex";
-      detailsContainer2.style.display = "none";
-    });
-  });
-</script>
+  </script>
+</Layout>
