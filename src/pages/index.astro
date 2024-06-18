@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <section id="home" class="flex justify-center mx-auto max-w-7xl w-11/12">
       <div class="flex flex-col">
         <h1 class="lg:text-8xl text-5xl animate-fade animate-duration-[2000ms]">
-          Designing emotional<br />digital experiences <br />that people love
+          Creating emotional<br />digital experiences <br />that people love
         </h1>
 
         <div
@@ -179,7 +179,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </div>
         <div
-          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
+          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12 hover:scale-105"
         >
           <div
             id="imageContainer2"
@@ -255,7 +255,7 @@ import Layout from "../layouts/Layout.astro";
     }
 
     .text-gold {
-      color: rgb(244, 231, 200);
+      color: rgb(244, 231, 212);
     }
 
     body.light-mode .workcontainer {
@@ -272,6 +272,10 @@ import Layout from "../layouts/Layout.astro";
       --tw-shadow: var(--tw-shadow-colored);
     }
 
+    body.light-mode .workcontainer:hover {
+      scale: 1.05px;
+    }
+
     body.light-mode .workcontainer .detailscontainer {
       color: black;
     }
@@ -285,7 +289,7 @@ import Layout from "../layouts/Layout.astro";
         0 8px 10px -6px var(--tw-shadow-color);
       box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-      --tw-shadow-color: #6b7280;
+      --tw-shadow-color: rgba(244, 231, 212, 0.548);
       --tw-shadow: var(--tw-shadow-colored);
     }
   </style>
