@@ -1,0 +1,39 @@
+---
+import WorkItem from "./WorkItem.astro";
+---
+
+<section id="work" class="h-screen max-w-7xl mx-auto w-11/12">
+  <div class="flex-col flex gap-8 w-full justify-center items-center">
+    <div class="flex justify-start text-start pb-20">
+      <h1 class="text-7xl">Featured work</h1>
+    </div>
+    <WorkItem
+      img="./lamlogo.webp"
+      alt="Lights and Media"
+      title="Lights and Media: Social Media Agency"
+      href="https://www.lightsandmedia.agency/"
+    >
+      <p>
+        Built with Next, Node.js, Typescript, CSS, <br /> HTML, Tailwind CSS, Instagram
+        API.
+      </p>
+    </WorkItem>
+    <WorkItem
+      img="./UnivWindowslogo.png"
+      alt="Universal Windows and Doors Logo"
+      title="Universal Windows and Doors Multiservices"
+      desc=""
+      href="https://uwdmultiservices.com/"
+    >
+      <p>Built with: Astro, JavaScript, Node.js, Tailwind CSS, HTML, CSS.</p>
+    </WorkItem>
+    <WorkItem
+      img="./boxinglogo.webp"
+      alt="Boxing Event III Logo"
+      title="Boxing Event III"
+      href="https://boxingevent.netlify.app/"
+    >
+      <p>Built with: Astro, JavaScript, Tailwind CSS, HTML, CSS</p>
+    </WorkItem>
+  </div>
+</section>

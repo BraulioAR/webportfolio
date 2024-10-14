@@ -77,5 +77,61 @@ import Footer from "../components/Footer.astro";
       flex-direction: column;
       justify-content: center;
     }
+
+    .rotating-effect {
+      animation-name: rotate;
+      animation-duration: 10s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      transform-origin: center;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .text-gold {
+      color: rgb(244, 231, 212);
+    }
+
+    body.light-mode .workcontainer {
+      --tw-bg-opacity: 0.1;
+      background-color: rgb(244 231 212 / var(--tw-bg-opacity));
+
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      --tw-shadow-color: #6b7280;
+      --tw-shadow: var(--tw-shadow-colored);
+    }
+
+    body.light-mode .workcontainer:hover {
+      scale: 1.05px;
+    }
+
+    body.light-mode .workcontainer .detailscontainer {
+      color: black;
+    }
+
+    body.dark-mode .workcontainer {
+      --tw-bg-opacity: 1;
+      background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+      --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+      box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+      --tw-shadow-color: rgba(244, 231, 212, 0.548);
+      --tw-shadow: var(--tw-shadow-colored);
+    }
   </style>
 </html>
