@@ -74,6 +74,59 @@ import Layout from "../layouts/Layout.astro";
           class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
         >
           <div
+            id="imageContainer4"
+            class="flex justify-center items-center h-[25vh] overflow-hidden"
+          >
+            <img
+              id="image"
+              src="./logo-daily-power-1.webp"
+              alt="Daily Power"
+              class="object-scale-down h-full hover:scale-105"
+            />
+          </div>
+          <div
+            id="detailsContainer4"
+            class="hidden h-[25vh] justify-center items-center"
+          >
+            <div
+              class="mx-auto flex flex-col gap-5 justify-center items-center"
+            >
+              <h1
+                class="font-bold text-black italic text-sm lg:text-xl text-center detailscontainer"
+              >
+                <u class="decoration-[#f8d8a7]"> Daily Power </u>
+                <h1
+                  class="font-bold text-black italic text-xs lg:text-xl text-center detailscontainer"
+                >
+                  Technologies used: Next.js, JavaScript, Node.js, Tailwind CSS,
+                  Contentful Headless CMS, HTML, Restful APIs, OpenGraphQL.
+                </h1>
+                <div class="flex flex-row justify-between gap-20">
+                  <button
+                    id="backButton4"
+                    class="text-sm text-black font-bold italic hover:scale-105 detailscontainer bg-[#F4F6F6] px-4 shadow-xl shadow-gray-500 rounded-md"
+                  >
+                    Back
+                  </button>
+                  <button
+                    class="hover:scale-105 bg-[#F4F6F6] text-[1.125rem] px-4 shadow-xl shadow-gray-500 rounded-md animate-wiggle animate-infinite animate-duration-1000 animate-ease-in hover:animate-none"
+                  >
+                    <a
+                      href="https://dailypower.com.do/"
+                      target="_blank"
+                      class="text-sm text-black font-bold italic detailscontainer"
+                      >Go</a
+                    >
+                  </button>
+                </div>
+              </h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
+        >
+          <div
             id="imageContainer"
             class="flex justify-center h-[25vh] items-center overflow-hidden"
           >
@@ -153,8 +206,8 @@ import Layout from "../layouts/Layout.astro";
                 <h1
                   class="font-bold text-black italic text-xs lg:text-xl text-center detailscontainer"
                 >
-                  Built with: Astro, JavaScript, Node.js, Tailwind CSS, HTML,
-                  CSS.
+                  Built with: Astro, JavaScript, Node.js, Tailwind CSS, SAAS,
+                  HTML, CSS.
                 </h1>
                 <div class="flex flex-row justify-between gap-20">
                   <button
