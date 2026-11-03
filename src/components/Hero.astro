@@ -1,9 +1,14 @@
+---
+import { translations, type Locale } from "../i18n";
+const { locale = "en" } = Astro.props as { locale?: Locale };
+const t = translations[locale];
+---
 <section id="home" class="flex justify-center mx-auto max-w-7xl w-11/12">
   <div class="flex flex-col">
     <h1
-      class="lg:text-8xl text-5xl animate-fade animate-duration-[2000ms] text-center lg:text-start"
+      class="lg:text-7xl xl:text-8xl text-4xl sm:text-5xl animate-fade animate-duration-[2000ms] text-center lg:text-start"
     >
-      Creating emotional<br />digital experiences <br />that people love
+      {t.hero.map((line, index) => <>{line}{index < t.hero.length - 1 && <br />}</>)}
     </h1>
 
     <div
@@ -15,8 +20,8 @@
         <img
           id="profilepic"
           class="rounded-full h-20 w-20 m-[18px] object-cover"
-          src="./profilepic.jpg"
-          alt="Profile Pic"
+          src="/profilepic.jpg"
+          alt={t.portrait}
         />
 
         <svg class="h-26 w-26 absolute top-0 left-0 overflow-visible">
@@ -28,19 +33,18 @@
           </defs>
           <text font-size="17" fill="#F4E7D4" dominant-baseline="Hanging">
             <textPath xlink:href="#circlePath">
-              ✦ BRAULIO ROSARIO ✦ WEB DEVELOPER
+              ✦ BRAULIO ROSARIO ✦ {t.developer}
             </textPath>
           </text>
         </svg>
       </div>
 
       <div class="flex justify-center items-center mx-auto">
-        <h2 class="text-lg lg:text-start text-center">
-          I'm a web developer with over 2 years of experience, based in <br />
-          the Dominican Republic. I like to understand people to <br />solve
-          their problems and create websites that resonate.
+        <h2 class="text-lg lg:text-start text-center max-w-xl">
+          {t.intro}
         </h2>
       </div>
     </div>
   </div>
 </section>
+

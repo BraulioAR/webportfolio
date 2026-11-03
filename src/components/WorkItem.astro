@@ -1,69 +1,30 @@
 ---
-const { img, alt, title, href } = Astro.props;
+import { translations, type Locale } from "../i18n";
+interface Props { locale?: Locale; img: string; alt: string; title: string; href: string; category?: string; }
+const { img, alt, title, href, category = '', locale = 'en' } = Astro.props;
+const t = translations[locale];
 ---
-
-<div
-  class="flex flex-col workcontainer rounded-lg animate-fade-left animate-duration-1000 lg:w-3/4 w-11/12"
->
-  <div
-    class="imageContainer flex justify-center h-[25vh] items-center overflow-hidden"
-  >
-    <img
-      class="image object-cover h-full hover:scale-105 cursor-pointer"
-      src={img}
-      alt={alt}
-    />
+<article class="project-card">
+  <a class="project-image" href={href} target="_blank" rel="noopener noreferrer" aria-label={`${t.visit}: ${title} (${t.newtab})`}>
+    <img src={img} alt={alt} loading="lazy" decoding="async" width="800" height="450" />
+  </a>
+  <div class="project-details">
+    <p class="project-category">{category}</p>
+    <h3>{title}</h3>
+    <div class="project-description"><slot /></div>
+    <a class="project-link" href={href} target="_blank" rel="noopener noreferrer">{t.visit} <span aria-hidden="true">↗</span><span class="sr-only"> ({t.newtab})</span></a>
   </div>
-
-  <div class="detailsContainer hidden h-[25vh] w-full">
-    <div class="mx-auto flex flex-col gap-5 justify-center items-center">
-      <u class="decoration-[#f8d8a7]">
-        <h1
-          class="font-bold text-black italic text-sm lg:text-xl detailscontainer"
-        >
-          {title}
-        </h1>
-      </u>
-      <h1
-        class="font-bold text-black italic text-xs lg:text-lg text-center detailscontainer"
-      >
-        <slot />
-      </h1>
-      <div class="flex flex-row justify-between gap-20">
-        <button
-          class="backButton text-sm text-black font-bold italic hover:scale-105 detailscontainer bg-[#F4F6F6] px-4 shadow-xl shadow-gray-500 rounded-md"
-        >
-          Back
-        </button>
-        <button
-          class="hover:scale-105 bg-[#F4F6F6] text-[1.125rem] px-4 shadow-xl shadow-gray-500 rounded-md animate-wiggle animate-infinite animate-duration-1000 animate-ease-in hover:animate-none"
-        >
-          <a
-            href={href}
-            target="_blank"
-            class="text-sm font-bold text-black italic detailscontainer">Go</a
-          >
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-  document.querySelectorAll(".imageContainer").forEach((imageContainer) => {
-    const detailsContainer = imageContainer.nextElementSibling as HTMLElement;
-    const backButton = detailsContainer.querySelector(
-      ".backButton"
-    ) as HTMLButtonElement;
-
-    imageContainer.addEventListener("click", () => {
-      (imageContainer as HTMLElement).style.display = "none";
-      detailsContainer.style.display = "flex";
-    });
-
-    backButton.addEventListener("click", () => {
-      (imageContainer as HTMLElement).style.display = "flex";
-      detailsContainer.style.display = "none";
-    });
-  });
-</script>
+</article>
+<style>
+.project-card { border: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent); border-radius: 18px; overflow: hidden; display: flex; flex-direction: column; }
+.project-image { display: flex; align-items: center; justify-content: center; background: #f4f4ef; aspect-ratio: 16 / 9; overflow: hidden; }
+.project-image img { width: 100%; height: 100%; object-fit: contain; padding: 24px; transition: transform .3s ease; }
+.project-image:hover img { transform: scale(1.04); }
+.project-details { padding: 28px; display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.project-category { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; opacity: .7; }
+h3 { font-size: clamp(21px, 3vw, 28px); line-height: 1.25; }
+.project-description { font-size: 14px; line-height: 1.8; opacity: .85; }
+.project-link { margin-top: auto; padding-top: 12px; font-size: 14px; font-weight: 600; text-decoration: underline; text-underline-offset: 6px; display: flex; justify-content: space-between; gap: 16px; }
+a:focus-visible { outline: 3px solid #b88532; outline-offset: -3px; }
+@media (prefers-reduced-motion: reduce) { .project-image img { transition: none; } }
+</style>

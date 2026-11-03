@@ -1,54 +1,31 @@
 ---
-import WorkItem from "./WorkItem.astro";
+import WorkItem from './WorkItem.astro';
+import { translations, type Locale } from '../i18n';
+const { locale = 'en' } = Astro.props as { locale?: Locale };
+const t = translations[locale];
 ---
-
-<section id="work" class="h-full max-w-7xl mx-auto w-11/12">
-  <div class="flex-col flex gap-8 w-full justify-center items-center">
-    <div class="flex justify-start text-start pb-20">
-      <h1 class="text-7xl">Featured work</h1>
-    </div>
-    <WorkItem
-      img="./logo-daily-power-1.webp"
-      alt="Daily Power"
-      title="Daily Power"
-      href="https://www.dailypower.com.do/"
-    >
-      <p class="max-w-xl">
-        Technologies used: Next.js, Node.js, Javascript, Tailwind CSS,
-        Contentful Headless CMS, OpenGraphQL, RESTful APIs.
-      </p>
+<section id="work" class="max-w-7xl mx-auto w-11/12">
+  <div class="mb-12">
+    <p class="text-sm uppercase tracking-widest mb-4 opacity-70">{t.selected}</p>
+    <h2 class="text-4xl md:text-7xl">{t.featured}</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <WorkItem img="/capocoot.webp" alt={t.alts[0]} title="CAPOCOOT" href="https://capocoot.com/" category={t.categories[0]} locale={locale}>
+      <p>{t.capocoot}</p>
+      <p class="mt-3">Astro · Tailwind CSS · JavaScript</p>
     </WorkItem>
-    <WorkItem
-      img="./lamlogo.webp"
-      alt="Lights and Media"
-      title="Lights and Media: Social Media Agency"
-      href="https://lightsandmedia.netlify.app/"
-    >
-      <p class="max-w-xl">
-        Built with Next, Node.js, Typescript, CSS, HTML, Tailwind CSS, Instagram
-        API.
-      </p>
+    <WorkItem img="/torre-roiz.webp" alt={t.alts[1]} title="Torre Roiz" href="https://privaterealestate.netlify.app/" category={t.categories[1]} locale={locale}>
+      <p>{t.torre}</p>
+      <p class="mt-3">Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Radix UI</p>
     </WorkItem>
-    <WorkItem
-      img="./UnivWindowslogo.png"
-      alt="Universal Windows and Doors Logo"
-      title="Universal Windows and Doors Multiservices"
-      desc=""
-      href="https://uwdmultiservices.com/"
-    >
-      <p class="max-w-xl">
-        Built with: Astro, JavaScript, Node.js, Tailwind CSS, HTML, CSS.
-      </p>
+    <WorkItem img="/logo-daily-power-1.webp" alt={t.alts[2]} title="Daily Power" href="https://www.dailypower.com.do/" category={t.categories[2]} locale={locale}>
+      <p>Next.js · Node.js · JavaScript · Tailwind CSS · Contentful CMS · REST APIs</p>
     </WorkItem>
-    <WorkItem
-      img="./boxinglogo.webp"
-      alt="Boxing Event III Logo"
-      title="Boxing Event III"
-      href="https://boxingevent.netlify.app/"
-    >
-      <p class="max-w-xl">
-        Built with: Astro, JavaScript, Tailwind CSS, HTML, CSS
-      </p>
+    <WorkItem img="/UnivWindowslogo.png" alt={t.alts[3]} title="Universal Windows and Doors" href="https://uwdmultiservices.com/" category={t.categories[3]} locale={locale}>
+      <p>Astro · JavaScript · Tailwind CSS · HTML · CSS</p>
+    </WorkItem>
+    <WorkItem img="/boxinglogo.webp" alt={t.alts[4]} title="Boxing Event III" href="https://boxingevent.netlify.app/" category={t.categories[4]} locale={locale}>
+      <p>Astro · JavaScript · Tailwind CSS · HTML · CSS</p>
     </WorkItem>
   </div>
 </section>

@@ -2,43 +2,28 @@
 import "@fontsource-variable/alexandria";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import { translations, localePath, type Locale } from "../i18n";
+const { locale = "en" } = Astro.props as { locale?: Locale };
+const t = translations[locale];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Braulio Rosario Web Portfolio" />
+    <meta name="description" content={t.description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>Braulio Rosario</title>
+    {(['en', 'es', 'pt'] as const).map(lang => <link rel="alternate" hreflang={lang} href={`https://barosario.netlify.app${localePath(lang)}`} />)}
+    <link rel="alternate" hreflang="x-default" href="https://barosario.netlify.app/" />
+    <link rel="canonical" href={`https://barosario.netlify.app${localePath(locale)}`} />
   </head>
   <body class="dark-mode">
-    <Header />
+    <Header locale={locale} />
     <slot />
-    <Footer />
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const toggleColorSchemeButton =
-          document.getElementById("toggleColorScheme");
-        if (toggleColorSchemeButton) {
-          toggleColorSchemeButton.addEventListener("click", () => {
-            const body = document.querySelector("body");
-            if (body) {
-              body.classList.toggle("dark");
-              console.log("Color change");
-              if (body.classList.contains("dark")) {
-                body.classList.remove("dark");
-                console.log("Color change");
-              } else {
-                body.classList.add("dark");
-                console.log("Color change");
-              }
-            }
-          });
-        }
-      });
-    </script>
+    <Footer locale={locale} />
+
   </body>
 
   <style is:global>
