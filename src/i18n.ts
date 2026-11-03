@@ -34,7 +34,7 @@ export const translations = {
     "description": "Braulio Rosario, web developer in the Dominican Republic. Explore projects built with React, Next.js and Astro.",
     "alts": [
       "CAPOCOOT cooperative logo",
-      "Torre Roiz residential building",
+      "Promotora Roiz logo",
       "Daily Power logo",
       "Universal Windows and Doors logo",
       "Boxing Event III logo"
@@ -75,7 +75,7 @@ export const translations = {
     "description": "Braulio Rosario, desarrollador web en República Dominicana. Conoce proyectos creados con React, Next.js y Astro.",
     "alts": [
       "Logo de la cooperativa CAPOCOOT",
-      "Edificio residencial Torre Roiz",
+      "Logo de Promotora Roiz",
       "Logo de Daily Power",
       "Logo de Universal Windows and Doors",
       "Logo de Boxing Event III"
@@ -116,7 +116,7 @@ export const translations = {
     "description": "Braulio Rosario, desenvolvedor web na República Dominicana. Conheça projetos criados com React, Next.js e Astro.",
     "alts": [
       "Logo da cooperativa CAPOCOOT",
-      "Edifício residencial Torre Roiz",
+      "Logo da Promotora Roiz",
       "Logo da Daily Power",
       "Logo da Universal Windows and Doors",
       "Logo da Boxing Event III"
@@ -126,3 +126,4 @@ export const translations = {
 export type Locale = keyof typeof translations;
 export const localePath = (locale: Locale) => locale === "en" ? "/" : `/${locale}/`;
 export const cvPath = (locale: Locale) => `/cv/Braulio-Rosario-CV-${locale.toUpperCase()}.pdf`;
+
